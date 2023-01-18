@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import { BsTrash } from "react-icons/bs";
 const Photo = ({
     id,
     urls: { regular },
@@ -25,6 +26,9 @@ const Photo = ({
         dispatch({ type: "LIKED", payload: id });
     };
 
+    const handleDelete = (itemId) => {
+        dispatch({ type: "DELETE_ITEM", payload: itemId });
+    };
     return (
         <section className="photo">
             <img src={regular} alt={alt_description} />
@@ -39,6 +43,14 @@ const Photo = ({
                     className="input-liked"
                     onChange={handleCheck}
                 />
+                <button
+                    className="delete-btn"
+                    onClick={() => {
+                        handleDelete(id);
+                    }}
+                >
+                    <BsTrash />
+                </button>
                 <div className="photo-info-wrapper">
                     <div>
                         <h4>{name}</h4>

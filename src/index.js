@@ -31,6 +31,11 @@ const reducer = (state = defaultState, action) => {
             } else {
                 return defaultState;
             }
+        case "DELETE_ITEM":
+            let newState = state.filter((item) => {
+                return item.id != action.payload;
+            });
+            return newState;
         default:
             return state;
     }

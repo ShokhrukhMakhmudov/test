@@ -240,6 +240,14 @@ Stock Photos
   visibility: hidden;
 }
 
+.delete-btn {
+  border: none;
+  background: transparent;
+  zoom: 2;
+  color: #fff;
+  cursor: pointer;
+}
+
 .photo-info-wrapper {
   display: flex;
   align-items: center;

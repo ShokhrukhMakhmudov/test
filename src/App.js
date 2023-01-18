@@ -21,7 +21,7 @@ function App() {
     const fetchApi = async () => {
         setLoading(true);
 
-        let url = `${mainUrl}${clientID}&page=1`;
+        let url = `${mainUrl}${clientID}&per_page=20`;
 
         try {
             const response = await fetch(url);
